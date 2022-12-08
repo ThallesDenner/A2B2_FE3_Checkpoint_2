@@ -22,13 +22,13 @@ const LoginForm = () => {
           <form onSubmit={handleSubmit}>
             <input
               className={`form-control ${styles.inputSpacing}`}
-              placeholder="Login"
+              placeholder="Entrar"
               name="login"
               required
             />
             <input
               className={`form-control ${styles.inputSpacing}`}
-              placeholder="Password"
+              placeholder="Senha"
               name="password"
               type="password"
               required

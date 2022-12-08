@@ -35,7 +35,7 @@ const Navbar = () => {
               <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
                 <a className="nav-link" href="/home">
-                  Home
+                  Início
                 </a>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
                 <a className="nav-link" href="/login">
-                  Login
+                  Entrar
                 </a>
               </li>
               <li className={`nav-item`}>

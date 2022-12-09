@@ -1,4 +1,4 @@
-.card{
+.card {
   width: 23rem;
   gap: 1rem;
   padding: 1rem;
@@ -6,10 +6,10 @@
   height: calc(100vh -86px);
 }
 
-.cardDark{
+.cardDark {
   background-color: #31313196;
 }
 
-.inputSpacing+.inputSpacing{
+.inputSpacing + .inputSpacing {
   margin: 1rem 0;
 }

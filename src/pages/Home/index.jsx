@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import Card from "../Components/Card";
+import Card from "../../components/Card";
 
 const Home = () => {
-
   useEffect(() => {
     //Nesse useEffect, deverá ser obtido todos os dentistas da API
     //Armazena-los em um estado para posteriormente fazer um map

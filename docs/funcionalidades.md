@@ -17,7 +17,7 @@ As seguintes funcionalidades são requisitos mínimos necessários para a aprova
 
 **A navegação correta entre as páginas através dos Links próprios do React Router será obrigatória para aprovação**
 
-**A presença homogênea em todas as páginas da [Navbar](/src/Components/Navbar.jsx) e [Footer](/src/Components/Footer.jsx)** é crucial**
+**A presença homogênea em todas as páginas da [Navbar](/src/components/Navbar.jsx) e [Footer](/src/components/Footer.jsx)** é crucial**
 
 ### Criação do Contexto
 Deverá ser criado um contexto global em seu aplicativo que disponibilize as seguintes informações:
@@ -41,12 +41,12 @@ Esta página deve mostrar uma lista em forma de grade dos dentistas retornados p
 
 O seguinte deve ser levado em consideração:
 * Deve ser a página inicial do site.
-* A grade deve mostrar um [Card](/src/Components/Card.jsx) para cada dentista retornado pela API.
+* A grade deve mostrar um [Card](/src/components/Card.jsx) para cada dentista retornado pela API.
 * Cada dentista deve conter `name` e `username`, juntamente com um `link` que permite navegar para a página _dentist/:id_ com base no id do dentista.
 
 ### Pagina 2: Login
 
-Nesta página deve-se implementar um [Form](/src/Components/LoginForm.jsx) (com suas respectivas validações) que capture as informações do usuário que deseja logar na aplicação. Os campos serão os seguintes:
+Nesta página deve-se implementar um [Form](/src/components/LoginForm.jsx) (com suas respectivas validações) que capture as informações do usuário que deseja logar na aplicação. Os campos serão os seguintes:
 * Login (com comprimento maior que 5)
 * Senha
 * Em caso de erro, exiba a seguinte mensagem de erro: **Verifique suas informações novamente**

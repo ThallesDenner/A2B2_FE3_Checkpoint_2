@@ -24,11 +24,11 @@
   filter: brightness(0);
 }
 
-.iconsDark{
+.iconsDark {
   filter: brightness(0) invert(1);
 }
 
-.dhLogo{
+.dhLogo {
   max-width: 50%;
 }
 

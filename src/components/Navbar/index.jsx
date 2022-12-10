@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 const Navbar = () => {
@@ -11,9 +12,9 @@ const Navbar = () => {
       >
         <div className="container">
           {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
-          <a className={`navbar-brand ${styles.navbarBrand}`} href="/home">
+          <Link className={`navbar-brand ${styles.navbarBrand}`} to="/home">
             DH Odonto
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -33,9 +34,21 @@ const Navbar = () => {
             <ul className="navbar-nav mb-2 mb-sm-0">
               <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
-                <a className="nav-link" href="/home">
+                <Link className="nav-link" to="/home">
                   Início
-                </a>
+                </Link>
+              </li>
+              <li className={`nav-item ${styles.navBarLink}`}>
+                {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+                <Link className="nav-link" to="/favorites">
+                  Favoritos
+                </Link>
+              </li>
+              <li className={`nav-item ${styles.navBarLink}`}>
+                {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+                <Link className="nav-link" to="/contact">
+                  Contato
+                </Link>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Se o usuário estiver logado, deverá aparecer um botão de logout
@@ -44,9 +57,9 @@ const Navbar = () => {
                 ao formulário de login
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
-                <a className="nav-link" href="/login">
+                <Link className="nav-link" to="/login">
                   Entrar
-                </a>
+                </Link>
               </li>
               <li className={`nav-item`}>
                 {/* Ao ser clicado, esse botão mudará a aplicação para dark mode ou light mode.

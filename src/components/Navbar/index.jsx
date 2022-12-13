@@ -11,7 +11,7 @@ const Navbar = () => {
         aria-label="Third navbar example"
       >
         <div className="container">
-          {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+          {/* Redireciona para a página inicial */}
           <Link className={`navbar-brand ${styles.navbarBrand}`} to="/home">
             DH Odonto
           </Link>
@@ -33,19 +33,19 @@ const Navbar = () => {
           >
             <ul className="navbar-nav mb-2 mb-sm-0">
               <li className={`nav-item ${styles.navBarLink}`}>
-                {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+                {/* Redireciona para a página inicial */}
                 <Link className="nav-link" to="/home">
                   Início
                 </Link>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
-                {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+                {/* Redireciona para a página de favoritos */}
                 <Link className="nav-link" to="/favorites">
                   Favoritos
                 </Link>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
-                {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
+                {/* Redireciona para a página de contato */}
                 <Link className="nav-link" to="/contact">
                   Contato
                 </Link>
@@ -57,6 +57,7 @@ const Navbar = () => {
                 ao formulário de login
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
+                {/* Redireciona para a página de login */}
                 <Link className="nav-link" to="/login">
                   Entrar
                 </Link>

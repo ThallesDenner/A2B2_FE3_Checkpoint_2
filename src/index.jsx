@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* Configuração das rotas */}
     <BrowserRouter>
       <Routes>
         {/* Os componentes associados com as rotas filhas são renderizados no lugar do componente <Outlet /> dentro de App.jsx */}

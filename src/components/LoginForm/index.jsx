@@ -20,7 +20,7 @@ const LoginForm = () => {
           <form onSubmit={handleSubmit}>
             <input
               className={`form-control ${styles.inputSpacing}`}
-              placeholder="Entrar"
+              placeholder="Usuário"
               name="login"
               required
             />
@@ -32,7 +32,7 @@ const LoginForm = () => {
               required
             />
             <button className="btn btn-primary" type="submit">
-              Send
+              Enviar
             </button>
           </form>
         </div>

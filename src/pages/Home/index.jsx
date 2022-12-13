@@ -1,18 +1,42 @@
+import { useState } from "react";
 import { useEffect } from "react";
 import Card from "../../components/Card";
+import api from "../../services/api";
 
 const Home = () => {
+  // useState retorna um par de valores: o estado atual e uma função que atualiza o estado
+  const [dentists, setDentists] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect permite executar efeitos colaterais (será executada apenas 1x após a primeira renderização do componente)
   useEffect(() => {
-    //Nesse useEffect, deverá ser obtido todos os dentistas da API
-    //Armazena-los em um estado para posteriormente fazer um map
-    //Usando o componente <Card />
+    // Função assíncrona para buscar todos os dentistas
+    const getAllDentists = async () => {
+      try {
+        const response = await api.get("/dentista");
+        // console.log("response.data de getAllDentists(): ", response.data);
+        setDentists(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        // console.log(error);
+        alert("Ocorreu um erro ao buscar todos os dentistas.");
+      }
+    };
+
+    getAllDentists();
   }, []);
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <>
-      <h1>Início</h1>
+      <h1>Escolha um dentista</h1>
       <div className="card-grid container">
-        <Card />
+        {dentists.map((dentist) => (
+          <Card key={dentist.matricula} dentist={dentist} />
+        ))}
       </div>
     </>
   );

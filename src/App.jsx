@@ -4,9 +4,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function App() {
+  // useLocation retorna o objeto de localização atual (rota para o componente App)
   const location = useLocation();
+
+  // useNavigate retorna uma função que permite navegar programaticamente
   const navigate = useNavigate();
 
+  // useEffect permite executar efeitos colaterais (será executada toda vez que o componente for renderizado)
   useEffect(() => {
     if (location.pathname === '/') {
       navigate('/home');

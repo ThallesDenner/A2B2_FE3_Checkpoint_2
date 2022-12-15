@@ -25,8 +25,8 @@ const NotFound = () => {
     if (counter > 0) {
       timeoutID = setTimeout(() => setCounter((t) => t - 1), 1000);
     } else {
-      // O usuário será redirecionado para a página inicial após 5s
-      navigate("/home");
+      // O usuário será redirecionado para a página de login após 5s
+      navigate("/login");
     }
 
     // Função de limpeza (cancela um timeout previamente estabelecido pela função setTimeout())
@@ -36,7 +36,7 @@ const NotFound = () => {
   return (
     <>
       <h1>
-        Página não encontrada. Redirecionado para a página inicial em {counter}
+        Página não encontrada. Redirecionado para a página de login em {counter}
         s.
       </h1>
     </>

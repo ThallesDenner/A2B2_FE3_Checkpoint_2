@@ -4,7 +4,7 @@ export const getFavoritesFromLocalStorage = () => {
   return favorites ? JSON.parse(favorites) : [];
 };
 
-// Função para armazenar os dentistas favoritos no localStorage
+// Função para salvar os dentistas favoritos no localStorage
 export const saveFavoritesInLocalStorage = (favorites) =>
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
@@ -16,7 +16,7 @@ export const addToFavorites = (dentist) => {
 };
 
 // Função para remover dentistas do array de favoritos
-// export const removeFromFavorite = (matricula) => {
+// export const removeFromFavorites = (matricula) => {
 //   const favorites = getFavoritesFromLocalStorage();
 //   favorites.find((dentist, index) =>
 //     dentist.matricula === matricula ? favorites.splice(index, 1) : false
@@ -24,7 +24,7 @@ export const addToFavorites = (dentist) => {
 //   saveFavoritesInLocalStorage(favorites);
 // };
 
-export const removeFromFavorite = (matricula) => {
+export const removeFromFavorites = (matricula) => {
   const favorites = getFavoritesFromLocalStorage();
   saveFavoritesInLocalStorage(
     favorites.filter((dentist) => dentist.matricula !== matricula)
@@ -40,4 +40,32 @@ export const isIncludedInFavorites = (matricula) => {
     }
   }
   return false;
-}
+};
+
+// Função para obter o tema a partir do localStorage
+export const getThemeFromLocalStorage = () => {
+  const theme = localStorage.getItem("theme");
+  return theme ? JSON.parse(theme) : "light";
+};
+
+// Função para salvar o tema no localStorage
+export const saveThemeInLocalStorage = (theme) =>
+  localStorage.setItem("theme", JSON.stringify(theme));
+
+// Função para obter o token a partir do localStorage
+export const getTokenFromLocalStorage = () => {
+  const token = localStorage.getItem("token");
+  return token ? JSON.parse(token) : "";
+};
+
+// Função para salvar o token no localStorage
+export const saveTokenInLocalStorage = (token) =>
+  localStorage.setItem("token", JSON.stringify(token));
+
+// Função para remover o token do localStorage
+export const removeTokenFromLocalStorage = () =>
+  localStorage.removeItem("token");
+
+// Função para verificar se tem token salvo no localStorage
+// export const hasToken = () => Boolean(getTokenFromLocalStorage());
+export const hasToken = () => !!getTokenFromLocalStorage();

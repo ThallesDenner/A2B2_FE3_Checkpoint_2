@@ -39,7 +39,7 @@ const Details = () => {
 
   return (
     <>
-      <h1>Marque sua consulta com {`${dentist.nome} ${dentist.sobrenome}`} </h1>
+      <h1>Agendar consulta com {`${dentist.nome} ${dentist.sobrenome}`} </h1>
       <DetailCard {...dentist} />
     </>
   );

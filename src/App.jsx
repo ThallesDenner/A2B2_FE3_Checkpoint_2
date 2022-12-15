@@ -2,8 +2,12 @@ import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { useThemeContext } from "./contexts/ThemeContext";
 
 function App() {
+  // useThemeContext retorna um objeto contendo o tema atual, uma flag e uma função que atualiza o tema
+  const { theme } = useThemeContext();
+
   // useLocation retorna o objeto de localização atual (rota para o componente App)
   const location = useLocation();
 
@@ -12,8 +16,8 @@ function App() {
 
   // useEffect permite executar efeitos colaterais (será executada toda vez que o componente for renderizado)
   useEffect(() => {
-    if (location.pathname === '/') {
-      navigate('/home');
+    if (location.pathname === "/") {
+      navigate("/login");
     }
   });
 
@@ -21,7 +25,7 @@ function App() {
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar a classe dark ou light */}
-      <div className={`app light}`}>
+      <div className={theme}>
         <Navbar />
         <main>
           <Outlet />

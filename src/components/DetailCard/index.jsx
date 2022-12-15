@@ -1,13 +1,17 @@
+import { useThemeContext } from "../../contexts/ThemeContext";
 import ScheduleFormModal from "../SchedulingFormModal";
 import styles from "./styles.module.css";
 
 const DetailCard = ({ nome, sobrenome, matricula, usuario }) => {
+  // useThemeContext retorna um objeto contendo o tema atual, uma flag e uma função que atualiza o tema
+  const { isLightMode } = useThemeContext();
+
   return (
     <>
       <section className="card col-sm-12 col-lg-6 container">
         {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-        <div className={`card-body row`}>
+        <div className={`card-body row ${isLightMode ? '' : styles.cardDark}`}>
           <div className="col-sm-12 col-lg-6">
             <img
               className="card-img-top"
@@ -31,9 +35,9 @@ const DetailCard = ({ nome, sobrenome, matricula, usuario }) => {
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                className={`btn btn-light ${styles.button}`}
+                className={`btn ${isLightMode ? 'btn-dark' : 'btn-light'} ${styles.button}`}
               >
-                Marcar consulta
+                Agendar consulta
               </button>
             </div>
           </div>

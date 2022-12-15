@@ -1,6 +1,10 @@
+import { useThemeContext } from "../../contexts/ThemeContext";
 import styles from "./styles.module.css";
 
 const Footer = () => {
+  // useThemeContext retorna um objeto contendo o tema atual, uma flag e uma função que atualiza o tema
+  const { theme, isLightMode } = useThemeContext();
+
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -15,19 +19,19 @@ const Footer = () => {
         </button>
         {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar a class navbar-dark bg-dark ou navbar-light bg-light  */}
-        <div className={`navbar-light bg-light} ${styles.footer}`}>
+        <div className={`navbar-${theme} bg-${theme} ${styles.footer}`}>
           <div className="container">
             <div className={`row`}>
               <div className="col-sm-12 col-lg-6">
                 {/* //Na linha seguinte deverá ser feito um teste se a aplicação
                 // está em dark mode e deverá utilizar o css correto */}
                 <img
-                  className={`${styles.dhLogo}`}
+                  className={`${styles.dhLogo} ${isLightMode ? '' : styles.iconsDark}`}
                   src="/images/DH.png"
                   alt="DH-logo"
                 />
               </div>
-              <div className={`col-sm-12 col-lg-6 ${styles.icons}`}>
+              <div className={`col-sm-12 col-lg-6 ${styles.icons} ${isLightMode ? '' : styles.iconsDark}`}>
                 <img
                   src="/images/ico-facebook.png"
                   alt="ícone do facebook"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useThemeContext } from "../../contexts/ThemeContext";
 import checkFormData from "../../utils/validations";
 import styles from "./styles.module.css";
 
@@ -6,9 +7,13 @@ import styles from "./styles.module.css";
 const initialState = {
   name: "",
   email: "",
-}
+  comment: "",
+};
 
 const ContactForm = () => {
+  // useThemeContext retorna um objeto contendo o tema atual, uma flag e uma função que atualiza o tema
+  const { isLightMode } = useThemeContext();
+
   // useState retorna um par de valores: o estado atual e uma função que atualiza o estado
   const [formData, setFormData] = useState(initialState);
   const [formDataError, setFormDataError] = useState({});
@@ -38,15 +43,21 @@ const ContactForm = () => {
     setFormData(initialState);
     setFormDataError({});
 
-    alert(`Obrigado ${formData.name}, entraremos em contato com você em breve.`);
+    alert(
+      `Obrigado ${formData.name}, entraremos em contato com você em breve.`
+    );
   };
 
   return (
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-      <div className={`text-center card container ${styles.card}`}>
-        <div className={`card-body ${styles.CardBody}`}>
+      <div
+        className={`text-center card container ${styles.card} ${
+          isLightMode ? "" : styles.cardDark
+        }`}
+      >
+        <div className={`card-body ${styles.cardBody}`}>
           <form onSubmit={handleSubmit} noValidate>
             <input
               type="text"
@@ -77,10 +88,15 @@ const ContactForm = () => {
             <textarea
               className="form-control"
               name="comment"
+              value={formData.comment}
               rows="3"
               placeholder="Comentário"
+              onChange={handleChange}
             />
-            <button className="btn btn-primary" type="submit">
+            <button
+              className={`btn ${isLightMode ? "btn-dark" : "btn-light"}`}
+              type="submit"
+            >
               Enviar
             </button>
           </form>

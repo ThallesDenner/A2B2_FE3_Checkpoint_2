@@ -21,6 +21,7 @@ textarea {
 .error {
   width: 100%;
   padding: 0.1rem;
-  font-size: 1rem;
-  color: #900;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: red;
 }

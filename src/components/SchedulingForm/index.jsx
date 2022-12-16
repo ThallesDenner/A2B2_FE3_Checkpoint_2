@@ -44,6 +44,21 @@ const SchedulingForm = () => {
         }),
       };
 
+      // const request = {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      //   body: {
+      //     paciente: {
+      //       matricula: formData.patient,
+      //     },
+      //     dentista: {
+      //       matricula: formData.dentist,
+      //     },
+      //     dataHoraAgendamento: formData.appointmentDate,
+      //   },
+      // };
+
       const response = await api.post("/consulta", request);
       // console.log("response.data de scheduleAppointment(): ", response.data);
 

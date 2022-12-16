@@ -1,6 +1,5 @@
 import { createContext, useReducer, useContext, useRef } from "react";
-import { getTokenFromLocalStorage, hasToken } from "../../services/local-storage";
-import { getDentistsFromSessionStorage, getPatientsFromSessionStorage } from "../../services/session-storage";
+import { getDentistsFromSessionStorage, getPatientsFromSessionStorage, getTokenFromSessionStorage, hasToken } from "../../services/session-storage";
 
 import { buildActions } from "./build-actions";
 import reducer from "./reducer";
@@ -8,7 +7,7 @@ import reducer from "./reducer";
 // Estado inicial
 const initialState = {
   isLogged: hasToken(),
-  token: getTokenFromLocalStorage(),
+  token: getTokenFromSessionStorage(),
   dentists: getDentistsFromSessionStorage(),
   patients: getPatientsFromSessionStorage(),
 }

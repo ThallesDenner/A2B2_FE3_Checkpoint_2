@@ -51,21 +51,3 @@ export const getThemeFromLocalStorage = () => {
 // Função para salvar o tema no localStorage
 export const saveThemeInLocalStorage = (theme) =>
   localStorage.setItem("theme", JSON.stringify(theme));
-
-// Função para obter o token a partir do localStorage
-export const getTokenFromLocalStorage = () => {
-  const token = localStorage.getItem("token");
-  return token ? JSON.parse(token) : "";
-};
-
-// Função para salvar o token no localStorage
-export const saveTokenInLocalStorage = (token) =>
-  localStorage.setItem("token", JSON.stringify(token));
-
-// Função para remover o token do localStorage
-export const removeTokenFromLocalStorage = () =>
-  localStorage.removeItem("token");
-
-// Função para verificar se tem token salvo no localStorage
-// export const hasToken = () => Boolean(getTokenFromLocalStorage());
-export const hasToken = () => !!getTokenFromLocalStorage();

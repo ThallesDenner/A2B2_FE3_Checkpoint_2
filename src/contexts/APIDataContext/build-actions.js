@@ -1,12 +1,10 @@
 import api from "../../services/api";
 import {
-  removeTokenFromLocalStorage,
-  saveTokenInLocalStorage,
-} from "../../services/local-storage";
-import {
   removeDentistsAndPatientsFromSessionStorage,
+  removeTokenFromSessionStorage,
   saveDentistsInSessionStorage,
   savePatientsInSessionStorage,
+  saveTokenInSessionStorage,
 } from "../../services/session-storage";
 import actionTypes from "./action-types";
 
@@ -22,12 +20,12 @@ export const buildActions = (dispatch) => {
 
 const logIn = ({ token, dispatch }) => {
   dispatch({ type: actionTypes.LOG_IN, payload: token });
-  saveTokenInLocalStorage(token);
+  saveTokenInSessionStorage(token);
 };
 
 const logOut = (dispatch) => {
   dispatch({ type: actionTypes.LOG_OUT });
-  removeTokenFromLocalStorage();
+  removeTokenFromSessionStorage();
   removeDentistsAndPatientsFromSessionStorage();
 };
 

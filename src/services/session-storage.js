@@ -1,3 +1,21 @@
+// Função para obter o token a partir do sessionStorage
+export const getTokenFromSessionStorage = () => {
+  const token = sessionStorage.getItem("token");
+  return token ? JSON.parse(token) : "";
+};
+
+// Função para salvar o token no sessionStorage
+export const saveTokenInSessionStorage = (token) =>
+  sessionStorage.setItem("token", JSON.stringify(token));
+
+// Função para remover o token do sessionStorage
+export const removeTokenFromSessionStorage = () =>
+  sessionStorage.removeItem("token");
+
+// Função para verificar se tem token salvo no sessionStorage
+// export const hasToken = () => Boolean(getTokenFromSessionStorage());
+export const hasToken = () => !!getTokenFromSessionStorage();
+
 // Função para obter os dentistas a partir do sessionStorage
 export const getDentistsFromSessionStorage = () => {
   const dentists = sessionStorage.getItem("dentists");
